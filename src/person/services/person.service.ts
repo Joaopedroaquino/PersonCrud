@@ -19,9 +19,7 @@ export class PersonService {
         }
 
         create(body: any){
-            const newPerson = this.personRepo.create(
-
-            );
+            const newPerson = this.personRepo.create(body);
 
             return this.personRepo.save(newPerson);
 
@@ -30,6 +28,18 @@ export class PersonService {
             // newPerson.id = body.id
 
 
+        }
+
+        async update(id: any, body:any){
+            const person = await this.personRepo.findOne(id);
+            this.personRepo.merge(person, body);
+            return this.personRepo.save(person);
+
+        }
+
+        delete(id:any){
+            this.personRepo.delete(id);
+            return true;
         }
 }
 
