@@ -3,10 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-
-
-    })
+    // TypeOrmModule.forRoot({ // })
   ],
   controllers: [],
   providers: [],
