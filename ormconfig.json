@@ -5,9 +5,9 @@
       "username": "root",
       "password": "root",
       "database": "root",
-      "entities": ["src/**/*.entity.ts"],
+      "entities": ["dist/src/**/*.entity.ts"],
       "synchronize": false,
       "migrationsTableName": "migrations",
-      "migrations": ["src/database/migrations/*.ts"],
-      "cli":{ "migrationsDir": "src/database/migrations" }
+      "migrations": ["dist/src/database/migrations/*.ts"],
+      "cli":{ "migrationsDir": "dist/src/database/migrations" }
 }
