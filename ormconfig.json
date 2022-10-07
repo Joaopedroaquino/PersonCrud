@@ -5,7 +5,7 @@
       "username": "root",
       "password": "root",
       "database": "root",
-      "entities": ["dist/**/*.entity{.ts,.js}"],
+      "entities": ["src/**/*.entity.ts"],
       "synchronize": false,
       "migrationsTableName": "migrations",
       "migrations": ["src/database/migrations/*.ts"],
