@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
+import { AddressPerson } from './person/entities/address.entity';
 import { Person } from './person/entities/person.entity';
 import { PersonModule } from './person/person.module';
 
@@ -14,9 +15,10 @@ import { PersonModule } from './person/person.module';
         username: 'root',
         password: 'root',
         database: 'root',
-        entities: [Person],
+        entities: [__dirname + '/**/*.entity{.js,.ts}'],
         synchronize: true,
       }
+     
  
     ),  
     
