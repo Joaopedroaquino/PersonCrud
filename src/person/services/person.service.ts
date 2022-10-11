@@ -7,7 +7,8 @@ import { Person } from '../entities/person.entity';
 export class PersonService {
 
     constructor(
-        @InjectRepository(Person) private personRepo: Repository<Person>
+        @InjectRepository(Person) 
+        private personRepo: Repository<Person>
         ) {}
 
         findAll(){

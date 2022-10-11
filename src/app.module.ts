@@ -1,25 +1,32 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { DataSource } from 'typeorm';
+import { Person } from './person/entities/person.entity';
 import { PersonModule } from './person/person.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot( //{
-      // type: 'postgres',
-      // host: 'localhost',
-      // port: 5437,
-      // username: 'root',
-      // password: 'root',
-      // database: 'root',
-      // entities: ['dist/**/*.entity{.ts,.js}'],
-      // synchronize: false,
-      // retryDelay: 3000,
-      // retryAttempts: 10
-    //}
+    TypeOrmModule.forRoot( 
+     {
+        type: 'postgres',
+        host: 'localhost',
+        port: 5437,
+        username: 'root',
+        password: 'root',
+        database: 'root',
+        entities: [Person],
+        synchronize: true,
+      }
+ 
     ),  
     
     PersonModule],
   controllers: [],
   providers: [],
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private dataSource: DataSource) {
+    console.log(__dirname)
+  }
+
+ }
