@@ -4,6 +4,8 @@ import { DataSource } from 'typeorm';
 import { AddressPerson } from './person/entities/address.entity';
 import { Person } from './person/entities/person.entity';
 import { PersonModule } from './person/person.module';
+import { ProfileController } from './profile/profile.controller';
+import { ProfileModule } from './profile/profile.module';
 
 @Module({
   imports: [
@@ -22,8 +24,8 @@ import { PersonModule } from './person/person.module';
  
     ),  
     
-    PersonModule],
-  controllers: [],
+    PersonModule, ProfileModule],
+  controllers: [ProfileController],
   providers: [],
 })
 export class AppModule {
