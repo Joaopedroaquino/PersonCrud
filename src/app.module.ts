@@ -4,6 +4,7 @@ import { DataSource } from 'typeorm';
 import { AddressPerson } from './person/entities/address.entity';
 import { Person } from './person/entities/person.entity';
 import { PersonModule } from './person/person.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -22,7 +23,7 @@ import { PersonModule } from './person/person.module';
  
     ),  
     
-    PersonModule],
+    PersonModule, AuthModule],
   controllers: [],
   providers: [],
 })
