@@ -10,4 +10,12 @@ export class AuthController {
         return {token: this.authService.login( body.username, body.password)};
     }
     
+    @Get('enter')
+    test(@Req() req){ 
+        console.log(req.user)
+        return {
+            name:'Joao Pedro',
+        
+        }
+    }
 }
