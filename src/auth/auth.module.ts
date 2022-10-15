@@ -8,12 +8,12 @@ import { JwtStrategyService } from './jwt-strategy/jwt-strategy.service';
 
   imports: [
     JwtModule.register({
-      secret:'abcd123456',
-      signOptions:{
-        expiresIn: '60s' 
-    }
-  })],
+      secret: 'abcd123456',
+      signOptions: {
+        expiresIn: '60s'
+      }
+    })],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategyService]
 })
-export class AuthModule {}
+export class AuthModule { }
