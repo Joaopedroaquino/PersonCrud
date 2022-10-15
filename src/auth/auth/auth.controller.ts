@@ -6,21 +6,21 @@ import { JwtGuard } from './jwt.guard';
 
 @Controller('auth')
 export class AuthController {
-    constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService) { }
 
     @Post('login')
-    login(@Body() body){
-        return {token: this.authService.login( body.username, body.password)};
+    login(@Body() body) {
+        return { token: this.authService.login(body.username, body.password) };
     }
-    
+
     @Role('admin')
     @UseGuards(JwtGuard, RoleGuard)
     @Get('enter')
-    test(@Req() req){ 
+    test(@Req() req) {
         console.log(req.user)
         return {
-            name:'Joao Pedro',
-        
+            name: 'Joao Pedro',
+
         }
     }
 }
