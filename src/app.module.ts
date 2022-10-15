@@ -6,6 +6,7 @@ import { Person } from './person/entities/person.entity';
 import { PersonModule } from './person/person.module';
 import { AuthModule } from './auth/auth.module';
 import { JwtStrategyService } from './auth/jwt-strategy/jwt-strategy.service';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -24,7 +25,7 @@ import { JwtStrategyService } from './auth/jwt-strategy/jwt-strategy.service';
 
     ),
 
-    PersonModule, AuthModule],
+    PersonModule, AuthModule, UserModule],
   controllers: [],
   providers: [],
 })
