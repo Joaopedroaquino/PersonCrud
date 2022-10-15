@@ -9,8 +9,8 @@ import { JwtStrategyService } from './auth/jwt-strategy/jwt-strategy.service';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot( 
-     {
+    TypeOrmModule.forRoot(
+      {
         type: 'postgres',
         host: 'localhost',
         port: 5437,
@@ -20,10 +20,10 @@ import { JwtStrategyService } from './auth/jwt-strategy/jwt-strategy.service';
         entities: [__dirname + '/**/*.entity{.js,.ts}'],
         synchronize: true,
       }
-     
- 
-    ),  
-    
+
+
+    ),
+
     PersonModule, AuthModule],
   controllers: [],
   providers: [],
@@ -33,4 +33,4 @@ export class AppModule {
     console.log(__dirname)
   }
 
- }
+}
