@@ -26,7 +26,7 @@ import { JwtStrategyService } from './auth/jwt-strategy/jwt-strategy.service';
     
     PersonModule, AuthModule],
   controllers: [],
-  providers: [JwtStrategyService],
+  providers: [],
 })
 export class AppModule {
   constructor(private dataSource: DataSource) {
