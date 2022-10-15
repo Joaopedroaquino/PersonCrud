@@ -5,6 +5,7 @@ import { AddressPerson } from './person/entities/address.entity';
 import { Person } from './person/entities/person.entity';
 import { PersonModule } from './person/person.module';
 import { AuthModule } from './auth/auth.module';
+import { JwtStrategyService } from './jwt-strategy/jwt-strategy.service';
 
 @Module({
   imports: [
@@ -25,7 +26,7 @@ import { AuthModule } from './auth/auth.module';
     
     PersonModule, AuthModule],
   controllers: [],
-  providers: [],
+  providers: [JwtStrategyService],
 })
 export class AppModule {
   constructor(private dataSource: DataSource) {
