@@ -1,4 +1,7 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, UseGuards } from '@nestjs/common';
+import { Role } from 'role.decorator';
+import { JwtGuard } from 'src/auth/auth/jwt.guard';
+import { RoleGuard } from 'src/auth/role.guard';
 import { PersonService } from '../services/person.service';
 
 @Controller('person')
@@ -6,7 +9,8 @@ export class PersonController {
     
     constructor(private personService: PersonService){}
 
-
+    @Role('admin')
+    @UseGuards(JwtGuard, RoleGuard)
     @Get()
     getAll(){
         return this.personService.findAll();
