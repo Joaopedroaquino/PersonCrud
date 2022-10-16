@@ -15,6 +15,10 @@ export class UserService {
 
     async create(user: ICreateUserDTO): Promise<ICreateUserDTO>{
         const newUser = this.userRepo.create(user);
+        newUser.email = user.email
+        newUser.name = user.name
+        newUser.password = user.password
+        
         return this.userRepo.save(newUser);
     }
 }
