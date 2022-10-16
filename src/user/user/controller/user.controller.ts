@@ -17,6 +17,8 @@ export class UserController {
 
     @Post()
     async create(@Body() body: ICreateUserDTO ): Promise<IresultDTO> {
+
+        this.userService.create(body)
         return <IresultDTO> {
             status: false,
             message: "Created"
