@@ -16,6 +16,7 @@ import { JwtStrategyService } from './jwt-strategy/jwt-strategy.service';
         expiresIn: '60s'
       }
     }), UserModule,PassportModule],
+    exports:[JwtModule, AuthService],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategyService, LocalStrategy]
 })
