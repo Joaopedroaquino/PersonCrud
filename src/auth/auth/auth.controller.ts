@@ -10,7 +10,7 @@ export class AuthController {
 
     @Post('login')
     login(@Body() body) {
-        return { token: this.authService.login(body.username, body.password) };
+        return { token: this.authService.login(body.username) };
     }
 
     @Role('admin')

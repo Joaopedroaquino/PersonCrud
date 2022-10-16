@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Post, Req, Request, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { AuthService } from 'src/auth/auth/auth.service';
 import { IresultDTO } from 'src/person/dto/IResultDTO';
 import { Person } from 'src/person/entities/person.entity';
 import { ICreateUserDTO } from '../dto/ICreateUserDTO';
@@ -8,7 +9,7 @@ import { UserService } from '../services/user.service';
 
 @Controller('user')
 export class UserController {
-    constructor(private userService: UserService){}
+    constructor(private userService: UserService, private authService: AuthService){}
 
 
     @Get()
@@ -30,6 +31,6 @@ export class UserController {
     @UseGuards(AuthGuard('local'))
    @Post('login')
    async login(@Request()req) {
-    return req.user;
+    return this.authService.login(req.user)
   }
 }
