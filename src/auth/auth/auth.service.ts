@@ -27,16 +27,16 @@ const users = [
 export class AuthService {
   constructor(private jwtService: JwtService, private userService: UserService) { }
 
- async login(user: any) {
+//  async login(user: any) {
 
-    const payload = {
-      //sub: user.id,
-      username: user.email,
-      //role: user.role,
-    };
+//     const payload = {
+//       //sub: user.id,
+//       username: user.email,
+//       //role: user.role,
+//     };
 
-    return{ acess_token: this.jwtService.sign(payload) } 
-  }
+//     return{ acess_token: this.jwtService.sign(payload) } 
+//   }
 
   validateCredentials(username: string, password: string) {
     const user = users.find(
