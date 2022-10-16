@@ -8,7 +8,7 @@ export class UserService {
     constructor(@InjectRepository(User)
     private userRepo: Repository<User>,){}
 
-    async list():Promise<User[]> {
+    async findAll():Promise<User[]> {
         return this.userRepo.find()
     }
 }
