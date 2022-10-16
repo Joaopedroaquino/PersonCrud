@@ -8,10 +8,10 @@ import { JwtGuard } from './jwt.guard';
 export class AuthController {
     constructor(private authService: AuthService) { }
 
-    @Post('login')
-    login(@Body() body) {
-        return { token: this.authService.login(body.username) };
-    }
+    // @Post('login')
+    // login(@Body() body) {
+    //     return { token: this.authService.login(body.username) };
+    // }
 
     @Role('admin')
     @UseGuards(JwtGuard, RoleGuard)
