@@ -23,4 +23,8 @@ export class UserService {
         
         return this.userRepo.save(newUser);
     }
+
+    async findOne(email: string): Promise<User | undefined> {
+        return this.userRepo.createQueryBuilder('user').where('email = :email, {email}').getOne()
+      }
 }
