@@ -1,4 +1,4 @@
 export interface IresultDTO{
-    result: boolean;
+    status: boolean;
     message: string;
 }

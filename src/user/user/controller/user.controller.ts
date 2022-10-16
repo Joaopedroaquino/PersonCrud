@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
+import { IresultDTO } from 'src/person/dto/IResultDTO';
 import { Person } from 'src/person/entities/person.entity';
 import { ICreateUserDTO } from '../dto/ICreateUserDTO';
 import { User } from '../entities/user.entity';
@@ -15,7 +16,11 @@ export class UserController {
     }
 
     @Post()
-    async create(@Body() body: ICreateUserDTO ) {
-        return this.userService.create(body)
+    async create(@Body() body: ICreateUserDTO ): Promise<IresultDTO> {
+        return <IresultDTO> {
+            status: false,
+            message: "Created"
+            
+        }
     }
 }
