@@ -48,7 +48,7 @@ export class PersonService {
 
         }
 
-        async update(id: any, body: any){
+        async update(id: any, body: Person){
             const person = await this.personRepo.findOne(id);
             this.personRepo.merge(person, body);
             return this.personRepo.save(person);

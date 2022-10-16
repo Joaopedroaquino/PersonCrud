@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, Param, Post, Put, UseGuards } from '@nes
 import { Role } from 'role.decorator';
 import { JwtGuard } from 'src/auth/auth/jwt.guard';
 import { RoleGuard } from 'src/auth/role.guard';
+import { Person } from '../entities/person.entity';
 import { PersonService } from '../services/person.service';
 
 @Controller('person')
@@ -29,7 +30,7 @@ export class PersonController {
     }
 
     @Put(':id')
-    update(@Param('id') id: number, @Body() body: any){
+   async update(@Param('id') id: number, @Body() body: Person): Promise<Person>{
         return this.personService.update(id, body);
 
     }
