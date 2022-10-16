@@ -27,7 +27,7 @@ const users = [
 export class AuthService {
   constructor(private jwtService: JwtService, private userService: UserService) { }
 
-  login(username: string, password: string) {
+ async login(username: string, password: string) {
     const user = this.validateCredentials(username, password);
 
     const payload = {
