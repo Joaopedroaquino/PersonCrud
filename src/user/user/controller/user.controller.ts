@@ -20,7 +20,7 @@ export class UserController {
 
         this.userService.create(body)
         return <IresultDTO> {
-            status: false,
+            status: true,
             message: "Created"
             
         }
