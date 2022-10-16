@@ -13,7 +13,7 @@ export class UserService {
         return this.userRepo.find()
     }
 
-    async create(user: ICreateUserDTO){
+    async create(user: ICreateUserDTO): Promise<ICreateUserDTO>{
         const newUser = this.userRepo.create(user);
         return this.userRepo.save(newUser);
     }

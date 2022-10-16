@@ -15,7 +15,7 @@ export class UserController {
         return this.userService.findAll()
     }
 
-    @Post()
+    @Post('register')
     async create(@Body() body: ICreateUserDTO ): Promise<IresultDTO> {
 
         this.userService.create(body)
