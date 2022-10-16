@@ -1,4 +1,5 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, Request, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { IresultDTO } from 'src/person/dto/IResultDTO';
 import { Person } from 'src/person/entities/person.entity';
 import { ICreateUserDTO } from '../dto/ICreateUserDTO';
@@ -25,4 +26,10 @@ export class UserController {
             
         }
     }
+
+    @UseGuards(AuthGuard('local'))
+   @Post('login')
+   async login(@Request()req) {
+    return req.user;
+  }
 }

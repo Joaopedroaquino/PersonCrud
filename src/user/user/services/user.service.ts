@@ -25,6 +25,6 @@ export class UserService {
     }
 
     async findOne(email: string): Promise<User | undefined> {
-        return this.userRepo.createQueryBuilder('user').where('email = :email, {email}').getOne()
+        return this.userRepo.findOneBy({email: email});
       }
 }
