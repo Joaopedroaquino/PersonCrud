@@ -11,4 +11,9 @@ export class UserService {
     async findAll():Promise<User[]> {
         return this.userRepo.find()
     }
+
+    async create(user: any){
+        const newUser = this.userRepo.create(user);
+        return this.userRepo.save(newUser);
+    }
 }

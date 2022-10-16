@@ -13,7 +13,7 @@ name: string
 email: string
 
 @Column({name:'password'})
-paswword: string
+password: string
 
 }
 
